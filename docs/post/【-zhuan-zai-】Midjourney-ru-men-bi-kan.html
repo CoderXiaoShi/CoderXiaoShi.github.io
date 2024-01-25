@@ -13,7 +13,8 @@
         else if(localStorage.getItem("meek_theme")=="light"){document.getElementsByTagName("html")[0].attributes.getNamedItem("data-color-mode").value="light";}
     </script>
     
-<title>程序员小石</title>
+<title>【转载】Midjourney入门必看</title>
+
 
 </head>
 <style>
@@ -24,81 +25,78 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </style>
 
 <style>
-.avatar {transition: 0.8s;width:64px;height:64px;}
-.avatar:hover{transform: scale(1.15) rotate(360deg);}
-#header h1 a{color:inherit;text-decoration:none;vertical-align: bottom;font-size:40px;font-family:Monaco;margin-left:8px;}
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
 .title-right{display:flex;margin:auto 0 0 auto;}
-.title-right button{margin-right:8px;padding:16px;}
-.title-right .circle{padding: 14px 16px;}
-
-.SideNav{min-width: 360px;}
-.SideNav-icon{margin-right: 16px}
-.SideNav-item .Label{color: #fff;margin-left:8px;}
-.d-flex{min-width:0;}
-.listTitle{overflow:hidden;white-space:nowrap;text-overflow: ellipsis;max-width: 100%;}
-.listLabels{white-space:nowrap;}
-.listLabels object{max-height:16px;max-width:24px;}
-
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
 @media (max-width: 600px) {
     body {padding: 8px;}
-    .avatar {width:40px;height:40px;}
-    .blogTitle{display:none;}
-    #buttonRSS{display:none;}
-    .LabelTime{display:none;}
+    .postTitle{font-size:24px;}
 }
 </style>
 
 
+
+
 <body>
     <div id="header">
-<h1>
-    <img src="https://avatars.githubusercontent.com/u/40633121?v=4" class="avatar circle" id="avatarImg" alt="avatar"><a class="blogTitle">2024</a></h1>
+<span class="postTitle">【转载】Midjourney入门必看</span>
 <div class="title-right">
-    <a href="//tag.html"><button id="buttonSearch" class="btn btn-invisible circle" title="搜索">
-        <svg class="octicon" width="16" height="16" >
-            <path id="pathSearch" fill-rule="evenodd"></path>
+
+    <a href="/"><button id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd" d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z"></path>
         </svg>
     </button></a>
-    
-    <a href="//rss.xml" target="_blank"><button id="buttonRSS" class="btn btn-invisible circle" title="RSS">
-        <svg class="octicon" width="16" height="16" >
-            <path id="pathRSS" fill-rule="evenodd"></path>
+
+    <a href="https://github.com/CoderXiaoShi/CoderXiaoShi.github.io/issues/3" target="_blank"><button class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
         </svg>
     </button></a>
-    <button class="btn btn-invisible circle" onclick="modeSwitch()" title="切换主题">
+
+    <button class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
         <svg class="octicon" width="16" height="16" >
             <path id="themeSwitch" fill-rule="evenodd"></path>
         </svg>
     </button>
+
 </div>
 </div>
     <div id="content">
-<div style="margin-bottom: 16px;">只要你跑的足够快, 耳边尽是风声</div>
-<nav class="SideNav border">
-<a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/%E3%80%90-zhuan-zai-%E3%80%91Midjourney-ru-men-bi-kan.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">【转载】Midjourney入门必看</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="//tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#bc4c00">2024-01-25</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/test.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">test</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="//tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#bc4c00">2024-01-23</span>
-    </div>
-</a>
-</nav>
+<div class="markdown-body" id="postBody">
+<p>给AI学习圈同学的入门宝典，欢迎在评论区补充互动，晒出你的私藏方法！</p>
+<p>【万能公式】<br>
+⭐「主体」+「媒介」+「环境」+「构图」+「灯光」+「风格」+「氛围」+「情绪」<br>
+1️⃣主体：人、动物、人物、地点、物体等。person, animal, character, location, object,<br>
+媒介：照片、绘画、插图、雕塑、涂鸦、挂毯等。photo, painting, illustration, sculpture, doodle, tapestry<br>
+2️⃣环境：室内、室外、月球上、纳尼亚、水下、翡翠城等。indoors, outdoors, on the moon, in Narnia, underwater, the Emerald City<br>
+构图：顶视、人像、爆头、特写、鸟瞰图等。Top view，Portrait, headshot, closeup, birds-eye view,<br>
+3️⃣灯光：柔光、环境、阴天、霓虹灯、工作室灯等。soft light, ambient, overcast, neon, studio lights<br>
+4️⃣氛围：充满活力、柔和、明亮、单色、彩色、黑白、柔和等。vibrant, muted, bright, monochromatic, colorful, black and white, pastel<br>
+5️⃣情绪：稳重、平静、喧闹、精力充沛等。Sedate, calm, raucous, energetic<br>
+6️⃣风格：东方山水画、浮世绘、日本漫画风格、皮克斯、蒸汽朋克、新海诚、宫崎骏风格。Tradition Chinese Ink Painting，Japanese Ukiyo-e，Japanese comics/manga，Pixar，Steampunk，Makoto Shinkai，Miyazaki Hayao style</p>
+<p>【常用参数】<br>
+1️⃣upbeta 使用测试性算法，可能生成质量更高或者风格更奇持的图<br>
+2️⃣test 使用测试性算法，和–upbeta比较类似，可生成质量更高或者风格更奇特的图，应用–test后，生成的图片会由四张变为一张<br>
+3️⃣hd 生成更高清的图，但是可能会减少图片中的细节，适合用于风景画、抽象画<br>
+4️⃣ar n.m 控制图片尺寸，n是长，m是宽，例如–ar 16:9， 可以输出长宽比为16:9的图片。注意冒号必须使用英文的冒号，中文冒号会不生效，ar后面必须空一 格再输入，否则可能不生效。<br>
+5️⃣seed参如果你想基于自己或别人的画作生成类似图像，又想调整下prompt，可以在prompt加入画作的Seed，格式是–seed 1949<br>
+6️⃣no去掉参数，–no 加具体物品，出图将不包含该物品，比如说–no people,新生成图片中将不包含人。<br>
+7️⃣creative创造(性)的，创作的;有创造力的，有想象力的<br>
+8️⃣iw 数字:设置图片与参考图和描述文字的相似程度。右键一张单图， 点击复制链接,粘贴到promt框，再输入描述性文字，比方说末尾加–iw0.5,数字越大，参考程度越高，系统默认为0.25, 最大值为5。<br>
+9️⃣q 生图时间，系统默认为1,数字越大，生图时间越长，质量越高。<br>
+🔟只能输入–q 0.25 –q 0.5 –q 1 –q 2 –q5 这五种数字。系统默认值为1,如果选用默认值,就无需在设置此项参数<br>
+1️⃣1️⃣Chaos 生成四张风格迥异的图，数值范围在0-100,数字越大，风格越不一致。<br>
+1️⃣2️⃣stop 图片停在一个具体百分比阶段，如输入–stop90, 则会在图片加载90%时停止升级，生成最终效果。<br>
+1️⃣3️⃣s 生成个性化，艺术性，更有创造里、想象力图片。数字范围值: 625-60000。系统默认值2500。数字越大，越有创造力，如果输入–S 60000， 生成的图与你输入的描述性文字可以说毫无关系。</p>
+</div>
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
 </div>
     <div id="footer">Copyright © <span id="year"></span><a href="/"> 程序员小石 </a>
 <p>
@@ -151,19 +149,45 @@ console.log("\n %c Gmeek last %c https://github.com/Meekdai/Gmeek \n\n", "color:
 </script>
 
 <script>
-document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
-document.getElementById("pathRSS").setAttribute("d",IconList["rss"]);
-iconTOP=document.getElementsByClassName("svgTop1");
-iconPost=document.getElementsByClassName("svgTop0");
-for(var i=0;i<iconTOP.length;i++){
-    iconTOP[i].setAttribute("d",IconList["upload"]);
-    iconTOP[i].parentNode.style.color="red";
-}
-for(var i=0;i<iconPost.length;i++){
-    iconPost[i].setAttribute("d",IconList["post"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","CoderXiaoShi/CoderXiaoShi.github.io");
+    script.setAttribute("issue-term","title");
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else{script.setAttribute("theme","github-light");}
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
 }
 
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
 
 </script>
+
+
+
 
 </html>
