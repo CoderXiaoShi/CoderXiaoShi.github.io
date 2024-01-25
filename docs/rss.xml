@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>程序员小石</title><link>/</link><description>只要你跑的足够快, 耳边尽是风声</description><copyright>程序员小石</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/40633121?v=4</url><title>avatar</title><link>/</link></image><lastBuildDate>Thu, 25 Jan 2024 07:32:19 +0000</lastBuildDate><managingEditor>程序员小石</managingEditor><pubDate>Thu, 25 Jan 2024 07:32:19 +0000</pubDate><ttl>60</ttl><webMaster>程序员小石</webMaster><item><title>【AI】13个小众宝藏AI网站</title><link>//post/%E3%80%90AI%E3%80%9113-ge-xiao-zhong-bao-cang-AI-wang-zhan.html</link><description>宝藏网站分享！拿走就能用！文档梳理、风格学习、AI剪辑、指令库统统都有，速速马克起来吧！&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>程序员小石</title><link>/</link><description>只要你跑的足够快, 耳边尽是风声</description><copyright>程序员小石</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/40633121?v=4</url><title>avatar</title><link>/</link></image><lastBuildDate>Thu, 25 Jan 2024 16:09:18 +0000</lastBuildDate><managingEditor>程序员小石</managingEditor><pubDate>Thu, 25 Jan 2024 16:09:18 +0000</pubDate><ttl>60</ttl><webMaster>程序员小石</webMaster><item><title>【AI】13个小众宝藏AI网站</title><link>//post/%E3%80%90AI%E3%80%9113-ge-xiao-zhong-bao-cang-AI-wang-zhan.html</link><description>宝藏网站分享！拿走就能用！文档梳理、风格学习、AI剪辑、指令库统统都有，速速马克起来吧！&#13;
 &#13;
 -  bibiGPT 一键总结B站或者YouTube视频内容 https://bibigpt.co/&#13;
 -  Futurepedia 几乎包括所有AI工具 https://www.futurepedia.io/&#13;
@@ -19,9 +19,4 @@
 &#13;
 【万能公式】&#13;
 ⭐「主体」+「媒介」+「环境」+「构图」+「灯光」+「风格」+「氛围」+「情绪」&#13;
-- 主体：人、动物、人物、地点、物体等。</description><guid isPermaLink="true">//post/%E3%80%90AI%E3%80%91Midjourney-ru-men-bi-kan.html</guid><pubDate>Thu, 25 Jan 2024 06:49:17 +0000</pubDate></item><item><title>test</title><link>//post/test.html</link><description># Test&#13;
-&#13;
-```&#13;
-console.log('hello ')&#13;
-```&#13;
-。</description><guid isPermaLink="true">//post/test.html</guid><pubDate>Tue, 23 Jan 2024 06:31:56 +0000</pubDate></item></channel></rss>
+- 主体：人、动物、人物、地点、物体等。</description><guid isPermaLink="true">//post/%E3%80%90AI%E3%80%91Midjourney-ru-men-bi-kan.html</guid><pubDate>Thu, 25 Jan 2024 06:49:17 +0000</pubDate></item></channel></rss>
