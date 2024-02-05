@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>程序员小石</title><link>/</link><description>只要你跑的足够快, 耳边尽是风声</description><copyright>程序员小石</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/40633121?v=4</url><title>avatar</title><link>/</link></image><lastBuildDate>Mon, 05 Feb 2024 07:38:52 +0000</lastBuildDate><managingEditor>程序员小石</managingEditor><ttl>60</ttl><webMaster>程序员小石</webMaster><item><title>[AI笔记]如何转行AI, 可以试试这五步</title><link>//post/%5BAI-bi-ji-%5D-ru-he-zhuan-xing-AI%2C%20-ke-yi-shi-shi-zhe-wu-bu.html</link><description>&gt; 本章内容来自于 得到AI圈的学习笔记&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>程序员小石</title><link>/</link><description>只要你跑的足够快, 耳边尽是风声</description><copyright>程序员小石</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/40633121?v=4</url><title>avatar</title><link>/</link></image><lastBuildDate>Mon, 05 Feb 2024 08:28:03 +0000</lastBuildDate><managingEditor>程序员小石</managingEditor><ttl>60</ttl><webMaster>程序员小石</webMaster><item><title>如何转行AI, 可以试试这五步</title><link>//post/ru-he-zhuan-xing-AI%2C%20-ke-yi-shi-shi-zhe-wu-bu.html</link><description>&gt; 本章内容来自于 得到AI圈的学习笔记&#13;
 &#13;
 &#13;
 ## 第一步, 确定你当前会什么&#13;
@@ -49,7 +49,7 @@
   你还认识了一帮对AI特别感兴趣的人&#13;
   你甚至还在多个AI社区有了一点点名气&#13;
 &#13;
-那么这个时候, 你将不愁在这个行业待下去。</description><guid isPermaLink="true">//post/%5BAI-bi-ji-%5D-ru-he-zhuan-xing-AI%2C%20-ke-yi-shi-shi-zhe-wu-bu.html</guid><pubDate>Mon, 05 Feb 2024 07:38:28 +0000</pubDate></item><item><title>【AI】13个小众宝藏AI网站</title><link>//post/%E3%80%90AI%E3%80%9113-ge-xiao-zhong-bao-cang-AI-wang-zhan.html</link><description>宝藏网站分享！拿走就能用！文档梳理、风格学习、AI剪辑、指令库统统都有，速速马克起来吧！&#13;
+那么这个时候, 你将不愁在这个行业待下去。</description><guid isPermaLink="true">//post/ru-he-zhuan-xing-AI%2C%20-ke-yi-shi-shi-zhe-wu-bu.html</guid><pubDate>Mon, 05 Feb 2024 07:38:28 +0000</pubDate></item><item><title>【AI】13个小众宝藏AI网站</title><link>//post/%E3%80%90AI%E3%80%9113-ge-xiao-zhong-bao-cang-AI-wang-zhan.html</link><description>宝藏网站分享！拿走就能用！文档梳理、风格学习、AI剪辑、指令库统统都有，速速马克起来吧！&#13;
 &#13;
 -  bibiGPT 一键总结B站或者YouTube视频内容 https://bibigpt.co/&#13;
 -  Futurepedia 几乎包括所有AI工具 https://www.futurepedia.io/&#13;
