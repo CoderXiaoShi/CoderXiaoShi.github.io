@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>程序员小石</title><link>/</link><description>只要你跑的足够快, 耳边尽是风声</description><copyright>程序员小石</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/40633121?v=4</url><title>avatar</title><link>/</link></image><lastBuildDate>Mon, 05 Feb 2024 08:28:03 +0000</lastBuildDate><managingEditor>程序员小石</managingEditor><ttl>60</ttl><webMaster>程序员小石</webMaster><item><title>如何转行AI, 可以试试这五步</title><link>//post/ru-he-zhuan-xing-AI%2C%20-ke-yi-shi-shi-zhe-wu-bu.html</link><description>&gt; 本章内容来自于 得到AI圈的学习笔记&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>程序员小石</title><link>/</link><description>只要你跑的足够快, 耳边尽是风声</description><copyright>程序员小石</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/40633121?v=4</url><title>avatar</title><link>/</link></image><lastBuildDate>Tue, 28 May 2024 16:08:57 +0000</lastBuildDate><managingEditor>程序员小石</managingEditor><ttl>60</ttl><webMaster>程序员小石</webMaster><item><title>如何转行AI, 可以试试这五步</title><link>//post/ru-he-zhuan-xing-AI%2C%20-ke-yi-shi-shi-zhe-wu-bu.html</link><description>&gt; 本章内容来自于 得到AI圈的学习笔记&#13;
 &#13;
 &#13;
 ## 第一步, 确定你当前会什么&#13;
@@ -42,7 +42,7 @@
 &#13;
 ## 第五步, 给六个月的时间&#13;
 &#13;
-  你要和AI "融为一体"&#13;
+  你要和AI '融为一体'&#13;
   经过六个月的时间你已经不是AI的局外人了&#13;
   你已经了解AI的能力范围了&#13;
   你工作的30%都已经是由AI完成了&#13;
