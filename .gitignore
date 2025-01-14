@@ -1,0 +1,17 @@
+node_modules
+.DS_Store
+*.local
+package-lock.json
+yarn.lock
+build/
+release
+venv
+.venv
+__pycache__
+.idea
+log
+logs
+.codesave
+.cache
+.temp
+*-lock.yaml
