@@ -21,12 +21,12 @@ date: yyyy-MM-dd
     - 全球CDN加速, 支持外链, 原图保存
     - https://imgse.com/
 
-## imgur
+## 聚合图床
     - 国外老牌图床
     - 最大单张支持: 应该是 10 Mb 以上
     - 全球CDN加速, 支持外链, 原图保存
+    - x 必须翻墙
     - https://imgur.com/
-
 
 <table>
     <tbody>
@@ -92,3 +92,35 @@ date: yyyy-MM-dd
   </tr>
 </tbody>
 </table>
+
+
+## 还有一个方案, jsDelivr 有空我试试
+
+
+GitHub + jsDelivr（免费且稳定）
+特点：
+
+将图片上传到 GitHub 仓库，通过 jsDelivr CDN 加速访问。
+
+完全免费，无存储和流量限制。
+
+支持 HTTPS。
+
+步骤：
+
+在 GitHub 上创建一个仓库。
+
+将图片上传到仓库。
+
+使用 jsDelivr CDN 链接访问图片，例如：
+
+复制
+https://cdn.jsdelivr.net/gh/用户名/仓库名@版本号/图片路径
+限制：
+
+需要一定的技术能力。
+
+GitHub 仓库公开，图片对所有人可见。
+
+https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io/docs/images/logo.jpg
+
