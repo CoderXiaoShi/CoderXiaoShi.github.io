@@ -21,12 +21,23 @@ date: yyyy-MM-dd
     - 全球CDN加速, 支持外链, 原图保存
     - https://imgse.com/
 
-## 聚合图床
-    - 国外老牌图床
-    - 最大单张支持: 应该是 10 Mb 以上
+## GitHub + jsDelivr（免费且稳定）
+    - 开源免费
+    - 最好500kb以内
     - 全球CDN加速, 支持外链, 原图保存
-    - x 必须翻墙
-    - https://imgur.com/
+    - 完全免费
+
+    这个, jsDelivr 方案有点复杂
+
+1. 必须有 github 仓库
+2. 必须打 tag
+
+只要把你的图片上传到 github 仓库, 就可以通过 jsDelivr 访问了.
+
+```javaascriptt
+https://cdn.jsdelivr.net/gh/用户名/仓库名@版本号/图片路径
+```
+
 
 <table>
     <tbody>
@@ -35,7 +46,7 @@ date: yyyy-MM-dd
         <a href="https://imgse.com/" target="_blank">路过图床: https://imgse.com/</a>
     </td>
     <td style="width: 50%;">
-        <a href="https://imgur.com/" target="_blank">imgur: https://imgur.com/</a>
+        GitHub + jsDelivr
     </td>
   </tr>
   <tr>
@@ -45,7 +56,7 @@ date: yyyy-MM-dd
         小兰花, 抖音反串网红
     </p>
     </td>
-    <td style="width: 50%;"><img src="https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io/docs/images/44ce1bdab31120f9883e6ed3a546b7a.jpg" alt="小兰花, 抖音翻船网红"  />
+    <td style="width: 50%;"><img src="https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io@0.0.1/docs/images/xiaolanhua.jpg" alt="小兰花, 抖音翻船网红"  />
         <p>
         小兰花, 抖音反串网红
     </p>
@@ -56,7 +67,7 @@ date: yyyy-MM-dd
         <img src="https://s21.ax1x.com/2025/01/15/pEFFJvd.jpg" alt="潘金莲的药, 燕东萍的笑"  />
         <p>潘金莲的药, 燕东萍的笑</p>
     </td>
-    <td><img src="https://i.imgur.com/NTMVvYU.jpeg" alt="潘金莲的药, 燕东萍的笑"  />
+    <td><img src="https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io@0.0.1/docs/images/yaandongp.jpg" alt="潘金莲的药, 燕东萍的笑"  />
         <p>潘金莲的药, 燕东萍的笑</p>
     </td>
   </tr>
@@ -66,7 +77,7 @@ date: yyyy-MM-dd
         <p>2021年中旬, 在上海的某著名打卡点</p>
     </td>
     <td>
-        <img src="https://i.imgur.com/N7VC7RJ.jpeg" alt="2021年中旬, 在上海的某著名打卡点" />
+        <img src="https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io@0.0.1/docs/images/52690e529ffd951768ad505f5da38cf.jpg" alt="2021年中旬, 在上海的某著名打卡点" />
         <p>2021年中旬, 在上海的某著名打卡点</p>
     </td>
   </tr>
@@ -76,7 +87,7 @@ date: yyyy-MM-dd
         <p>2021年中旬, 在上海的某著名打卡点</p>
     </td>
     <td>
-        <img src="https://i.imgur.com/wkXX3OB.jpeg" alt="2021年中旬, 在上海的某著名打卡点" />
+        <img src="https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io@0.0.1/docs/images/b07b5dca9f5cf4518dab6bd094915b2.jpg" alt="2021年中旬, 在上海的某著名打卡点" />
         <p>2021年中旬, 在上海的某著名打卡点</p>
     </td>
   </tr>
@@ -86,44 +97,10 @@ date: yyyy-MM-dd
         <p>我的猫: 钢蛋儿</p>
     </td>
     <td>
-        <img src="https://i.imgur.com/oxw0s5t.jpeg" alt="我的猫: 钢蛋儿"  />
+        <img src="https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io@0.0.1/docs/images/c2d20b4c14fb269eb44f0fd9a86928e.jpeg" alt="我的猫: 钢蛋儿"  />
         <p>我的猫: 钢蛋儿</p>
     </td>
   </tr>
 </tbody>
 </table>
-
-
-## 还有一个方案, jsDelivr 有空我试试
-
-
-GitHub + jsDelivr（免费且稳定）
-特点：
-
-将图片上传到 GitHub 仓库，通过 jsDelivr CDN 加速访问。
-
-完全免费，无存储和流量限制。
-
-支持 HTTPS。
-
-步骤：
-
-在 GitHub 上创建一个仓库。
-
-将图片上传到仓库。
-
-使用 jsDelivr CDN 链接访问图片，例如：
-
-复制
-https://cdn.jsdelivr.net/gh/用户名/仓库名@版本号/图片路径
-限制：
-
-需要一定的技术能力。
-
-GitHub 仓库公开，图片对所有人可见。
-
-https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io/docs/images/44ce1bdab31120f9883e6ed3a546b7a.jpg
-
-
-https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io/docs/images/logo.jpg
 
