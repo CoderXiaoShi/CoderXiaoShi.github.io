@@ -45,7 +45,7 @@ date: yyyy-MM-dd
         小兰花, 抖音反串网红
     </p>
     </td>
-    <td style="width: 50%;"><img src="https://i.imgur.com/5gfpu6j.jpeg" alt="小兰花, 抖音翻船网红"  />
+    <td style="width: 50%;"><img src="https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io/docs/images/44ce1bdab31120f9883e6ed3a546b7a.jpg" alt="小兰花, 抖音翻船网红"  />
         <p>
         小兰花, 抖音反串网红
     </p>
@@ -121,6 +121,9 @@ https://cdn.jsdelivr.net/gh/用户名/仓库名@版本号/图片路径
 需要一定的技术能力。
 
 GitHub 仓库公开，图片对所有人可见。
+
+https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io/docs/images/44ce1bdab31120f9883e6ed3a546b7a.jpg
+
 
 https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io/docs/images/logo.jpg
 
