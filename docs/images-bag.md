@@ -23,7 +23,7 @@ date: yyyy-MM-dd
 
 ## GitHub + jsDelivr（免费且稳定）
     - 开源免费
-    - 最好500kb以内
+    - 最大单张支持 10Mb 以内
     - 全球CDN加速, 支持外链, 原图保存
     - 完全免费
 
@@ -67,7 +67,7 @@ https://cdn.jsdelivr.net/gh/用户名/仓库名@版本号/图片路径
         <img src="https://s21.ax1x.com/2025/01/15/pEFFJvd.jpg" alt="潘金莲的药, 燕东萍的笑"  />
         <p>潘金莲的药, 燕东萍的笑</p>
     </td>
-    <td><img src="https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io@0.0.1/docs/images/yaandongp.jpg" alt="潘金莲的药, 燕东萍的笑"  />
+    <td><img src="https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io@0.0.2/docs/images/yaandongp.jpg" alt="潘金莲的药, 燕东萍的笑"  />
         <p>潘金莲的药, 燕东萍的笑</p>
     </td>
   </tr>
@@ -97,7 +97,7 @@ https://cdn.jsdelivr.net/gh/用户名/仓库名@版本号/图片路径
         <p>我的猫: 钢蛋儿</p>
     </td>
     <td>
-        <img src="https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io@0.0.1/docs/images/c2d20b4c14fb269eb44f0fd9a86928e.jpeg" alt="我的猫: 钢蛋儿"  />
+        <img src="https://cdn.jsdelivr.net/gh/CoderXiaoShi/CoderXiaoShi.github.io@0.0.2/docs/images/c2d20b4c14fb269eb44f0fd9a86928e.jpg" alt="我的猫: 钢蛋儿"  />
         <p>我的猫: 钢蛋儿</p>
     </td>
   </tr>
