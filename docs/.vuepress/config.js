@@ -21,15 +21,15 @@ export default defineUserConfig({
             //         ]
             //     }
             // ],
-            // '/': [
-            //     {
-            //         text: '高级',
-            //         children: [
-            //             '/guide/installation.md',
-            //             '/Test.md'
-            //         ]
-            //     }
-            // ]
+            '/': [
+                {
+                    text: '高级',
+                    children: [
+                        '/images-bag.md',
+                        '/Test.md'
+                    ]
+                }
+            ]
         },
         // 默认主题配置
         navbar: [
@@ -40,6 +40,10 @@ export default defineUserConfig({
             {
                 text: 'Links',
                 link: '/Links.md',
+            },
+            {
+                text: '产品',
+                link: '/product.md',
             },
             {
                 text: 'Github',

@@ -6,12 +6,15 @@ date: yyyy-MM-dd
 
 ---
 
-# VuePress Test -- test
+# VuePress 初体验
 
+## 自定义组件
+
+<HelloWorld />
 
 <!-- 相对路径 -->
 
-> URL
+## URL
 
 [首页](../README.md)  
 [配置参考](../reference/config.md)  
@@ -26,11 +29,11 @@ date: yyyy-MM-dd
 
 [GitHub](https://github.com)
 
-> Emoji 表情
+## Emoji 表情
 
 VuePress 2 已经发布 :tada: ！
 
-> 高亮特定行 
+## 高亮特定行 
 
 ```ts{1,7-9}
 import { defaultTheme } from '@vuepress/theme-default'
@@ -44,12 +47,12 @@ export default defineUserConfig({
   }),
 })
 ```
-> 模板语法
+## 模板语法
 
 一加一等于： {{ 1 + 1 }}
 
 <span v-for="i in 3"> span: {{ i }} </span>
 
-> 内置组件
+## 内置组件
 
 这是默认主题内置的 `<Badge />` 组件 <Badge text="演示" />
