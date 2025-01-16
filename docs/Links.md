@@ -4,6 +4,8 @@ title: VuePress Test
 description: 页面的描述
 date: yyyy-MM-dd
 
+sidebar: false
+
 ---
 
 # Links

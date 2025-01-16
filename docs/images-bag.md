@@ -1,12 +1,11 @@
 ---
 lang: zh-CN
-title: 两个图床速度比拼
 description: 页面的描述
 date: yyyy-MM-dd
 
 ---
 
-# 两个图床速度比拼
+# 图床测评
 
 ```javascript
 刚上线博客, 突发奇想
@@ -103,4 +102,10 @@ https://cdn.jsdelivr.net/gh/用户名/仓库名@版本号/图片路径
   </tr>
 </tbody>
 </table>
+
+## 总结
+
+推荐 ***路过图床*** , 免费, 支持外链, 原图保存, 国内访问速度快.
+
+GitHub + jsdelivr 的方案 虽然免费, 但国内必须要翻墙
 

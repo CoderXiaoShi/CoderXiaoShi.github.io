@@ -22,11 +22,14 @@ export default defineUserConfig({
             //     }
             // ],
             '/': [
+                // '/Test.md',
+                // '/images-bag.md',
                 {
-                    text: '高级',
+                    text: '2025',
                     children: [
+                        '/markdown.md',
                         '/images-bag.md',
-                        '/Test.md'
+                        '/Test.md',
                     ]
                 }
             ]
@@ -38,12 +41,12 @@ export default defineUserConfig({
                 link: '/',
             },
             {
-                text: 'Links',
-                link: '/Links.md',
-            },
-            {
                 text: '产品',
                 link: '/product.md',
+            },
+            {
+                text: '外链',
+                link: '/Links.md',
             },
             {
                 text: 'Github',
