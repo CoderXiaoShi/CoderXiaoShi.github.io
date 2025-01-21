@@ -41,6 +41,11 @@ export default defineUserConfig({
                 link: '/',
             },
             {
+                text: 'blog',
+                link: '/blog.md',
+            },
+            
+            {
                 text: '产品',
                 link: '/product.md',
             },
