@@ -26,8 +26,6 @@ data.push({
 
 data.push(getMsg(`还支持表情包 😂, 表情包去这里找  <a target="_blank" href="https://github.com/ikatyang/emoji-cheat-sheet">https://github.com/ikatyang/emoji-cheat-sheet</a>`));
 
-console.log(data);
-
 </script>
 
 <template>
