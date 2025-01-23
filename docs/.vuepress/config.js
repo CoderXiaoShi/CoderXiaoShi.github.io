@@ -2,10 +2,13 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
+const sourceDir = process.cwd();
+
 export default defineUserConfig({
     base: '/',
     lang: 'zh-CN',
     title: '程序员小石',
+    dest: `./dist`,
     description: '我是程序员小石, 欢迎来到我的博客',
 
     bundler: viteBundler(),
@@ -44,7 +47,7 @@ export default defineUserConfig({
                 text: 'blog',
                 link: '/blog.md',
             },
-            
+
             {
                 text: '产品',
                 link: '/product.md',

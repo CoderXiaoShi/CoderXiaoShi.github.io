@@ -1,6 +1,5 @@
 <template>
   <div class="recycle-scroller">
-    <ClientOnly>
       <DynamicScroller
         ref="scroller"
         :items="source"
@@ -25,7 +24,6 @@
           </DynamicScrollerItem>
         </template>
       </DynamicScroller>
-    </ClientOnly>
     <slot name="floor" />
   </div>
 </template>

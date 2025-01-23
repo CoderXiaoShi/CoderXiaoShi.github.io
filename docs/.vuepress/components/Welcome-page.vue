@@ -1,4 +1,6 @@
 <script setup>
+import { ref, computed } from 'vue'
+import MessageBoxInput from './MessageBoxInput.vue'
 
 let data = []
 // 图片 | 文本
@@ -26,11 +28,22 @@ data.push({
 
 data.push(getMsg(`还支持表情包 😂, 表情包去这里找  <a target="_blank" href="https://github.com/ikatyang/emoji-cheat-sheet">https://github.com/ikatyang/emoji-cheat-sheet</a>`));
 
+const isEdit = computed(() => {
+    // console.log(process.env.NODE_ENV)
+    if (
+        location.host === 'localhost:8080' ||
+        location.host === 'blog.xinglong.tech'
+    ) {
+        return true;
+    }
+    return false;
+})
+
 </script>
 
 <template>
     <div class="message-box">
-        <RecycleScroller :source="data">
+        <RecycleScroller :source="data" style="height: calc(100% - 32px);">
           <template #default="{ item }">
             <div class="message-item">  
                 <div> <img class="message-avatar" src="/images/logo.jpg" alt=""> </div>
@@ -41,10 +54,12 @@ data.push(getMsg(`还支持表情包 😂, 表情包去这里找  <a target="_bl
                         <img width="50%" :src="item.image" alt="">
                     </div>
                     <pre v-if="item.type === 'text'" v-html="item.message"  ></pre>
+                    <a v-if="isEdit" href="#">删除</a>
                 </div>
             </div>
           </template>
         </RecycleScroller>
+        <MessageBoxInput v-if="isEdit"  />
     </div>
 </template>
 
@@ -64,7 +79,8 @@ data.push(getMsg(`还支持表情包 😂, 表情包去这里找  <a target="_bl
     height: 400px;
     background-color: #F5F5F5;
     margin: 0 auto;
-    padding: 10px 0;
+    // padding: 10px 0;
+    padding-top: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
@@ -75,6 +91,7 @@ data.push(getMsg(`还支持表情包 😂, 表情包去这里找  <a target="_bl
     padding: 0 10px;
     padding-bottom: 10px;
 }
+
 .message-item .message-avatar{
     width: 40px;
     height: 40px;
