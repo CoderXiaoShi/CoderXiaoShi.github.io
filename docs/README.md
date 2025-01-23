@@ -36,5 +36,5 @@ actions:
 一名热爱开发实用、有趣且富有创意的软件的软件工程师！我也是一名自媒体博主，并活跃于许多开发者社区！ -->
 
 <ClientOnly>
-    <Welcome  />
+    <Welcome />
 </ClientOnly>

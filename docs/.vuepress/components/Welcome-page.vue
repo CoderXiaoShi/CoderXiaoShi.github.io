@@ -29,13 +29,12 @@ data.push({
 data.push(getMsg(`还支持表情包 😂, 表情包去这里找  <a target="_blank" href="https://github.com/ikatyang/emoji-cheat-sheet">https://github.com/ikatyang/emoji-cheat-sheet</a>`));
 
 const isEdit = computed(() => {
-    // console.log(process.env.NODE_ENV)
-    if (
-        location.host === 'localhost:8080' ||
-        location.host === 'blog.xinglong.tech'
-    ) {
-        return true;
-    }
+        if (
+            location.host === 'localhost:8080' ||
+            location.host === 'blog.xinglong.tech'
+        ) {
+            return true;
+        }
     return false;
 })
 
@@ -43,7 +42,7 @@ const isEdit = computed(() => {
 
 <template>
     <div class="message-box">
-        <RecycleScroller :source="data" style="height: calc(100% - 32px);">
+        <RecycleScroller :source="data" :style="isEdit && {height: `calc(100% - 32px)`}">
           <template #default="{ item }">
             <div class="message-item">  
                 <div> <img class="message-avatar" src="/images/logo.jpg" alt=""> </div>
