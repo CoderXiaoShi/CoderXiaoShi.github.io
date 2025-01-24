@@ -15,4 +15,10 @@ logs
 .cache
 .temp
 *-lock.yaml
+
 docs
+server
+
+# Database
+*.sqlite
+*.sqlite3

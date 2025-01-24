@@ -1,32 +1,25 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import MessageBoxInput from './MessageBoxInput.vue'
 
-let data = []
-// 图片 | 文本
-const getMsg = (msg) => {
-    let row = {
+let data = ref([])
+const scroller = ref(null)
+
+/*
+    数据格式
+    {
         id: Math.random().toString(32).slice(2),
         message: msg,
         role: 'user', // user | assistant
         type: 'text', // text | image | video | audio | link
-        time: Date.now(),
     }
-    return row;
-}
-
-data.push(getMsg(`突发灵感，我决定写一个 vuepress 的聊天组件`));
-data.push(getMsg(`组件的样式模仿微信， 这样更有亲和力`));
-data.push(getMsg(`最好在来一个H5页面，这样我就 在手机上 编辑这部分内容了`));
-
-data.push(getMsg(`目前支持图片，<a href="/blog.html">链接</a>，和纯文本`));
-data.push({
-    id: Math.random().toString(32).slice(2),
-    image: `https://s21.ax1x.com/2025/01/15/pEFFmuR.jpg`,
-    type: 'image', // text | image | video | audio | link
-});
-
-data.push(getMsg(`还支持表情包 😂, 表情包去这里找  <a target="_blank" href="https://github.com/ikatyang/emoji-cheat-sheet">https://github.com/ikatyang/emoji-cheat-sheet</a>`));
+    突发灵感，我决定写一个 vuepress 的聊天组件
+    组件的样式模仿微信， 这样更有亲和力
+    最好在来一个H5页面，这样我就 在手机上 编辑这部分内容了
+    目前支持图片，<a href="/blog.html">链接</a>，和纯文本
+    https://s21.ax1x.com/2025/01/15/pEFFmuR.jpg
+    还支持表情包 😂, 表情包去这里找  <a target="_blank" href="https://github.com/ikatyang/emoji-cheat-sheet">https://github.com/ikatyang/emoji-cheat-sheet</a>
+*/
 
 const isEdit = computed(() => {
         if (
@@ -38,27 +31,73 @@ const isEdit = computed(() => {
     return false;
 })
 
+onMounted(() => {
+    query()
+})
+
+const query = async () => {
+    const res = await fetch(`http://localhost:3000/message`, {
+        method: 'GET'
+    })
+    let resData = await res.json()
+    console.log('query: ',resData.data)
+    data.value = resData.data
+    scrollToBottom()
+}
+
+const deleteMessage = async (id) => {
+    const res = await fetch(`http://localhost:3000/message/${id}`, {
+        method: 'DELETE'
+    })
+    await res.json()
+    query()
+}
+
+const scrollToBottom = () => {
+    scroller.value.scrollToBottom({ behavior: "smooth", })
+}
+
 </script>
 
 <template>
     <div class="message-box">
-        <RecycleScroller :source="data" :style="isEdit && {height: `calc(100% - 32px)`}">
-          <template #default="{ item }">
-            <div class="message-item">  
-                <div> <img class="message-avatar" src="/images/logo.jpg" alt=""> </div>
-                
-                <div class="message-content">
-                    <span class="message-naciname">程序员小石</span>
-                    <div v-if="item.type === 'image'">
-                        <img width="50%" :src="item.image" alt="">
+
+        <DynamicScroller
+            ref="scroller"
+            :style="isEdit && {height: `calc(100% - 32px)`}"
+            :items="data"
+            :min-item-size="54"
+            :emit-update="true"
+            class="scroller"
+            keyField="id"
+        >
+            <template #default="{ item, index, active }">
+            <DynamicScrollerItem
+                :item="item"
+                :active="active"
+                :size-dependencies="[
+                item.message,
+                ]"
+                :data-index="index"
+                :data-active="active"
+            >
+                <div class="message-item">  
+                    <div> <img class="message-avatar" src="/images/logo.jpg" alt=""> </div>
+                    
+                    <div class="message-content">
+                        <span class="message-naciname">程序员小石</span>
+                        <div v-if="item.type === 'image'">
+                            <img width="50%" :src="item.message" alt="">
+                        </div>
+                        <pre v-if="item.type === 'text'" v-html="item.message"  ></pre>
+                        <a @click="deleteMessage(item.id)">删除</a>
                     </div>
-                    <pre v-if="item.type === 'text'" v-html="item.message"  ></pre>
-                    <a v-if="isEdit" href="#">删除</a>
                 </div>
-            </div>
-          </template>
-        </RecycleScroller>
-        <MessageBoxInput v-if="isEdit"  />
+            </DynamicScrollerItem>
+            </template>
+        </DynamicScroller>
+
+        <MessageBoxInput v-if="isEdit" :query="query" />
     </div>
 </template>
 
@@ -70,8 +109,8 @@ const isEdit = computed(() => {
     }
 }
 
-@color_you: #fff;
-@color_me: #95EC69;
+@color_you: #95EC69;
+@color_me: #fff;
 
 .message-box{
     width: 60%;
@@ -104,6 +143,7 @@ const isEdit = computed(() => {
     flex: 1;
     display: flex;
     position: relative;
+    align-items: flex-start;
     flex-direction: column;
     .message-naciname{
         font-size: 10px;
@@ -115,18 +155,18 @@ const isEdit = computed(() => {
     }
     img{
         max-width: inherit !important;
-        background-color: #fff;
+        background-color: @color_you;
         padding: 5px;
         border-radius: 4px;
-        border: 1px solid #ccc;
+        border: 1px solid @color_you;
     }
     pre{
         margin: 0;
         padding: 5px;
-        background-color: #fff;
+        background-color: @color_you;
         font-size: 14px;
         border-radius: 4px;
-        border: 1px solid #ccc;
+        border: 1px solid @color_you;
         white-space: pre-wrap;
         .message-content pre a{
             color: #95EC69;
@@ -140,7 +180,7 @@ const isEdit = computed(() => {
         z-index: 2;
         border-width: 6px;
         border-style: solid;
-        border-color: transparent #fff transparent transparent;  /* 假设内容背景色是#f3f3f3 */
+        border-color: transparent @color_you transparent transparent;  /* 假设内容背景色是#f3f3f3 */
     }
     &::after {
         content: '';
@@ -150,7 +190,7 @@ const isEdit = computed(() => {
         z-index: 1;
         border-width: 6px;
         border-style: solid;
-        border-color: transparent #ccc transparent transparent;  /* 假设内容背景色是#f3f3f3 */
+        border-color: transparent @color_you transparent transparent;  /* 假设内容背景色是#f3f3f3 */
     }
 }
 

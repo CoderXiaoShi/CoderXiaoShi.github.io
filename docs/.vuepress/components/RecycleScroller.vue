@@ -7,8 +7,6 @@
         :emit-update="true"
         class="scroller"
         keyField="id"
-        @resize="onResize"
-        @update="onUpdate"
       >
         <template #default="{ item, index, active }">
           <DynamicScrollerItem
@@ -36,9 +34,6 @@ const scroller = ref(null)
 const { source } = defineProps({
   source: Object
 })
-
-const onResize = () => {}
-const onUpdate = () => {}
 
 onMounted(() => {
     nextTick(() => {
