@@ -64,7 +64,7 @@ const scrollToBottom = () => {
 
         <DynamicScroller
             ref="scroller"
-            :style="isEdit && {height: `calc(100% - 32px)`}"
+            :style="isEdit ? {height: `calc(100% - 32px)`} : {height: `100%`}"
             :items="data"
             :min-item-size="54"
             :emit-update="true"
