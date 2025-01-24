@@ -90,7 +90,7 @@ const scrollToBottom = () => {
                             <img width="50%" :src="item.message" alt="">
                         </div>
                         <pre v-if="item.type === 'text'" v-html="item.message"  ></pre>
-                        <a @click="deleteMessage(item.id)">删除</a>
+                        <a v-if="isEdit" @click="deleteMessage(item.id)">删除</a>
                     </div>
                 </div>
             </DynamicScrollerItem>
