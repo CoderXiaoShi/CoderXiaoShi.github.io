@@ -11,6 +11,8 @@ const users = require('./routes/users')
 const messages = require('./routes/message')
 const jwt = require('jsonwebtoken');
 
+const multer = require('@koa/multer');
+
 
 // 引入数据库配置
 const db = require('./config/database');
@@ -119,6 +121,9 @@ app.use(async (ctx, next) => {
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(messages.routes(), messages.allowedMethods())
+
+// 添加静态文件服务中间件，用于访问上传的图片
+app.use(require('koa-static')(__dirname + '/public'));
 
 // error-handling
 app.on('error', (err, ctx) => {

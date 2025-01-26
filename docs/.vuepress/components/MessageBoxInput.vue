@@ -85,12 +85,8 @@ const closeEmojiBox = () => {
 
 const publish = async () => {
     console.log('publish');
-    try {
-        await axios.get('/api/publish')
-        alert('发布成功')
-    } catch (error) {
-        alert('发布失败')
-    }
+    axios.get('/api/publish')
+    alert('已发送')
 }
 
 const sendMsg = async () => {
@@ -117,6 +113,23 @@ const uploadImg = async (e) => {
     // console.log(e)
     // const file = e.target.files[0]
     // console.log(file)
+    // let f = new FormData()
+    // f.append('image', e.target.files[0])
+    // let res = await axios.post('/api/message/uploadImage', f)
+    // console.log(res.data)
+
+    const formData = new FormData();
+    formData.append('image', e.target.files[0]);  // file 是文件对象
+
+    axios.post('/api/message/uploadImage', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    }).then(response => {
+        console.log(response.data);
+        props.query()
+    });
+
 }
 
 </script>

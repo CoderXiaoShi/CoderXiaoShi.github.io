@@ -1,7 +1,41 @@
 const Message = require('../models/message');
 const router = require('koa-router')()
+const multer = require('@koa/multer');
+const path = require('path');
+const fs = require('fs');
+
+
+const upload = multer(); // note you can pass `multer` options here
 
 router.prefix('/message')
+
+// 图片上传接口
+router.post('/uploadImage',
+    upload.single('image'),
+    async (ctx) => {
+        console.log(ctx.request.file)
+        const fileBuffer = ctx.request.file.buffer
+        const fileName = ctx.request.file.originalname
+
+        const filePath = path.join(process.cwd(), '../', 'docs', 'images', fileName)
+
+        fs.writeFileSync(filePath, fileBuffer)
+
+        // filePath
+
+        const newMessage = await Message.create({
+            role: 'user',
+            message: `images/${fileName}`,
+            type: 'image'
+        });
+
+        ctx.body = {
+            code: 1,
+            message: '上传成功',
+            data: newMessage
+        }
+    }
+);
 
 // 创建消息
 router.post('/', async (ctx) => {

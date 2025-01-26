@@ -55,7 +55,9 @@ const deleteMessage = async (id) => {
 
 const scrollToBottom = () => {
     nextTick(() => {
-        scroller.value.scrollToBottom({ behavior: "smooth", })
+        setTimeout(() => {
+            scroller.value.scrollToBottom()
+        }, 100)
     })
 }
 
