@@ -1,6 +1,7 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
+import myPlugin from './plugins/my-plugin'
 
 const sourceDir = process.cwd();
 
@@ -12,6 +13,9 @@ export default defineUserConfig({
     description: '我是程序员小石, 欢迎来到我的博客',
 
     bundler: viteBundler(),
+    plugins: [
+        myPlugin()
+    ],
     theme: defaultTheme({
 
         sidebar: {

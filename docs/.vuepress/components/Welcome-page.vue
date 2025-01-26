@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, nextTick } from 'vue'
 import MessageBoxInput from './MessageBoxInput.vue'
 
 let data = ref([])
@@ -36,7 +36,10 @@ onMounted(() => {
 })
 
 const query = async () => {
-    const res = await fetch(`http://localhost:3000/message`, {
+    // const res = await fetch(`http://localhost:3000/message`, {
+    //     method: 'GET'
+    // })
+    const res = await fetch(`/messageData.json`, {
         method: 'GET'
     })
     let resData = await res.json()
@@ -54,7 +57,9 @@ const deleteMessage = async (id) => {
 }
 
 const scrollToBottom = () => {
-    scroller.value.scrollToBottom({ behavior: "smooth", })
+    nextTick(() => {
+        scroller.value.scrollToBottom({ behavior: "smooth", })
+    })
 }
 
 </script>
