@@ -16,9 +16,9 @@ logs
 .temp
 *-lock.yaml
 
-docs
-server
+# docs
+# server
 
 # Database
-*.sqlite
-*.sqlite3
+# *.sqlite
+# *.sqlite3
