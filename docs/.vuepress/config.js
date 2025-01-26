@@ -12,7 +12,19 @@ export default defineUserConfig({
     dest: `./dist`,
     description: '我是程序员小石, 欢迎来到我的博客',
 
-    bundler: viteBundler(),
+    bundler: viteBundler({
+        viteOptions: {
+            server: {
+                proxy: {
+                    '/api': {
+                        target: 'http://localhost:3000',
+                        changeOrigin: true,
+                        rewrite: (path) => path.replace(/^\/api/, '')
+                    }
+                }
+            }
+        }
+    }),
     plugins: [
         myPlugin()
     ],

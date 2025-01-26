@@ -86,7 +86,7 @@ const closeEmojiBox = () => {
 const publish = async () => {
     console.log('publish');
     try {
-        await axios.get('http://localhost:3000/publish')
+        await axios.get('/api/publish')
         alert('发布成功')
     } catch (error) {
         alert('发布失败')
@@ -108,7 +108,7 @@ const sendMsg = async () => {
         data.type = 'image'
     }
 
-    await axios.post('http://localhost:3000/message', data)
+    await axios.post('/api/message', data)
     state.inputMsg = ''
     props.query()
 }

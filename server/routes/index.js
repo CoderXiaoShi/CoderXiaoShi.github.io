@@ -13,6 +13,10 @@ router.get('/', async (ctx, next) => {
     })
 })
 
+router.get('/ryouok', async (ctx, next) => {
+    ctx.body = 'ok'
+})
+
 router.get('/publish', async (ctx, next) => {
 
     /*

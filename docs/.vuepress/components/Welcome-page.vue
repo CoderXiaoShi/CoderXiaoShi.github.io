@@ -22,12 +22,9 @@ const scroller = ref(null)
 */
 
 const isEdit = computed(() => {
-        if (
-            location.host === 'localhost:8080' ||
-            location.host === 'blog.xinglong.tech'
-        ) {
-            return true;
-        }
+    if (location.search === '?edit=true') {
+        return true;
+    }
     return false;
 })
 
@@ -37,23 +34,19 @@ onMounted(() => {
 
 const query = async () => {
     let url = '/messageData.json'
-    if (location.host === 'localhost:8080' || location.host === 'blog.xinglong.tech') {
-        url = 'http://localhost:3000/message'
+    if (isEdit.value) {
+        url = '/api/message'
     }
     const res = await fetch(url, {
         method: 'GET'
     })
-    // const res = await fetch(`/messageData.json`, {
-    //     method: 'GET'
-    // })
     let resData = await res.json()
-    console.log('query: ',resData.data)
     data.value = resData.data
     scrollToBottom()
 }
 
 const deleteMessage = async (id) => {
-    const res = await fetch(`http://localhost:3000/message/${id}`, {
+    const res = await fetch(`/api/message/${id}`, {
         method: 'DELETE'
     })
     await res.json()
