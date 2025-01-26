@@ -61,6 +61,10 @@ const scrollToBottom = () => {
     })
 }
 
+const onImageLoad = () => {
+    scroller.value.scrollToBottom()
+}
+
 </script>
 
 <template>
@@ -91,7 +95,7 @@ const scrollToBottom = () => {
                     <div class="message-content">
                         <span class="message-naciname">程序员小石</span>
                         <div v-if="item.type === 'image'">
-                            <img width="50%" :src="item.message" alt="">
+                            <img width="50%" :src="item.message" alt="" @load="onImageLoad" >
                         </div>
                         <pre v-if="item.type === 'text'" v-html="item.message"  ></pre>
                         <a v-if="isEdit" @click="deleteMessage(item.id)">删除</a>
