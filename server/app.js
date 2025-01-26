@@ -69,8 +69,8 @@ app.use(async (ctx, next) => {
     const allowedOrigins = [
         'http://localhost:8080',
         'http://localhost:3000',
-        'https://www.xinglong.tech',
-        'https://xinglong.tech',
+        // 'https://www.xinglong.tech',
+        // 'https://xinglong.tech',
         // 添加你的生产环境域名
         // 'https://your-domain.com'
     ];

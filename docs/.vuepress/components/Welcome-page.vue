@@ -36,12 +36,16 @@ onMounted(() => {
 })
 
 const query = async () => {
-    // const res = await fetch(`http://localhost:3000/message`, {
-    //     method: 'GET'
-    // })
-    const res = await fetch(`/messageData.json`, {
+    let url = '/messageData.json'
+    if (location.host === 'localhost:8080' || location.host === 'blog.xinglong.tech') {
+        url = 'http://localhost:3000/message'
+    }
+    const res = await fetch(url, {
         method: 'GET'
     })
+    // const res = await fetch(`/messageData.json`, {
+    //     method: 'GET'
+    // })
     let resData = await res.json()
     console.log('query: ',resData.data)
     data.value = resData.data

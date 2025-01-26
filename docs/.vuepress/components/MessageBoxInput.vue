@@ -34,7 +34,9 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-    emojiBox.value.removeEventListener('click', emojiBoxFn, true)
+    if (emojiBox.value) {
+        emojiBox.value.removeEventListener('click', emojiBoxFn, true)
+    }
     document.addEventListener('click', backCloseEmojiBox, false)
 })
 
@@ -76,7 +78,19 @@ const openEmojiBox = () => {
 }
 
 const closeEmojiBox = () => {
-    emojiBox.value.style.display = 'none'
+    if (emojiBox.value) {
+        emojiBox.value.style.display = 'none'
+    }
+}
+
+const publish = async () => {
+    console.log('publish');
+    try {
+        await axios.get('http://localhost:3000/publish')
+        alert('发布成功')
+    } catch (error) {
+        alert('发布失败')
+    }
 }
 
 const sendMsg = async () => {
@@ -158,6 +172,7 @@ const uploadImg = async (e) => {
 
         <!-- 发消息 -->
         <button @click="sendMsg" :disabled="state.inputMsg === '' || state.inputMsg.trim() === ''">发送</button>
+        <button @click="publish" >发布</button>
     </div>
 </template>
 
