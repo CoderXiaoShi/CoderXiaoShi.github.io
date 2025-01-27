@@ -22,6 +22,11 @@ const scroller = ref(null)
 */
 
 const isEdit = computed(() => {
+    
+    if (location.href.includes('192.168') || location.href.includes('localhost')) {
+        return true
+    }
+
     if (location.search === '?edit=true') {
         return true;
     }
