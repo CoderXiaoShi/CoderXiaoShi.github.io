@@ -129,8 +129,188 @@ const uploadImg = async (e) => {
         console.log(response.data);
         props.query()
     });
-
 }
+
+let emojiList = [
+    "😀",
+    "😃",
+    "😄",
+    "😁",
+    "😆",
+    "😅",
+    "🤣",
+    "😂",
+    "🙂",
+    "🙃",
+    "😉",
+    "😊",
+    "😇",
+    "🥰",
+    "😍",
+    "🤩",
+    "😘",
+    "😗",
+    "☺️",
+    "😚",
+    "😙",
+    "😋",
+    "😛",
+    "😜",
+    "🤪",
+    "😝",
+    "🤑",
+    "🤗",
+    "🤭",
+    "🤫",
+    "🤔",
+    "🤐",
+    "🤨",
+    "😐",
+    "😑",
+    "😶",
+    "😶‍🌫️",
+    "😏",
+    "😒",
+    "🙁",
+    "😮",
+    "😯",
+    "😲",
+    "😳",
+    "🥺",
+    "😦",
+    "😧",
+    "😨",
+    "😰",
+    "😥",
+    "😢",
+    "😭",
+    "😱",
+    "😖",
+    "😣",
+    "😞",
+    "😓",
+    "😩",
+    "😫",
+    "🥱",
+    "😤",
+    "😡",
+    "😠",
+    "🤬",
+    "😈",
+    "👿",
+    "💀",
+    "☠️",
+    "💩",
+    "🤡",
+    "👹",
+    "👺",
+    "👻",
+    "👽",
+    "👾",
+    "🤖",
+    "😺",
+    "😸",
+    "😹",
+    "😻",
+    "😼",
+    "😽",
+    "🙀",
+    "😿",
+    "😾",
+    "🙈",
+    "🙉",
+    "🙊",
+    "❤️",
+    "💖",
+    "💗",
+    "💓",
+    "💞",
+    "💕",
+    "💖",
+    "💘",
+    "💝",
+    "💟",
+    "❣️",
+    "💔",
+    "❤️‍🔥",
+    "❤️‍🩹",
+    "❤️",
+    "🧡",
+    "💛",
+    "💚",
+    "💙",
+    "💜",
+    "🤎",
+    "🖤",
+    "🤍",
+    "💋",
+    "💯",
+    "💢",
+    "💥",
+    "💫",
+    "💦",
+    "💨",
+    "💬",
+    "👁️‍🗨️",
+    "🗨️",
+    "🗯️",
+    "💭",
+    "💤",
+    "👋",
+    "🤚",
+    "🖐️",
+    "🖖",
+    "👌",
+    "🤌",
+    "🤏",
+    "✌️",
+    "🤎",
+    "🤞",
+    "🤟",
+    "🤘",
+    "🤙",
+    "👈",
+    "👉",
+    "👆",
+    "🖕",
+    "👇",
+    "☝️",
+    "👍",
+    "👎",
+    "✊",
+    "👊",
+    "🤛",
+    "🤜",
+    "👏",
+    "🙌",
+    "👐",
+    "🤝",
+    "🙏",
+    "✍️",
+    "💅",
+    "🤳",
+    "💪",
+    "🦾",
+    "🦿",
+    "🦵",
+    "🦶",
+    "👂",
+    "🦻",
+    "👃",
+    "🧠",
+    "❤️",
+    "🫀",
+    "🫁",
+    "🦷",
+    "🦴",
+    "👀",
+    "👁️",
+    "👅",
+    "👄",
+    "👶",
+    "👧",
+    "👦",
+]
 
 </script>
 
@@ -147,31 +327,9 @@ const uploadImg = async (e) => {
         <!-- 表情包 -->
         <span class="message-input-emoji" @click.stop.self="openEmojiBox">😁</span>
         <div class="message-input-emoji-box" ref="emojiBox" style="display: none;">
-            <span class="emoji-icon">🥺</span>
-            <span class="emoji-icon">☹️</span>
-            <span class="emoji-icon">🥺</span>
-            <span class="emoji-icon">☹️</span>
-            <span class="emoji-icon">🥺</span>
-            <span class="emoji-icon">☹️</span>
-            <span class="emoji-icon">🥺</span>
-            <span class="emoji-icon">☹️</span>
-            <span class="emoji-icon">🥺</span>
-            <span class="emoji-icon">☹️</span>
-            <span class="emoji-icon">🥺</span>
-            <span class="emoji-icon">☹️</span>
-            <span class="emoji-icon">🥺</span>
-            <span class="emoji-icon">☹️</span>
-            <span class="emoji-icon">☹️</span>
-            <span class="emoji-icon">🥺</span>
-            <span class="emoji-icon">☹️</span>
-            <span class="emoji-icon">🥺</span>
-            <span class="emoji-icon">☹️</span>
-            <span class="emoji-icon">🥺</span>
-            <span class="emoji-icon">☹️</span>
-            <span class="emoji-icon">🥺</span>
-            <span class="emoji-icon">☹️</span>
-            <span class="emoji-icon">🥺</span>
-            <span class="emoji-icon">☹️</span>
+            <!-- <span class="emoji-icon">🥺</span>
+            <span class="emoji-icon">☹️</span> -->
+            <span v-for="emoji in emojiList" :key="emoji" class="emoji-icon">{{ emoji }}</span>
         </div>
 
         <!-- 文本框 -->

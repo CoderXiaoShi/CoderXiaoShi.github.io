@@ -32,7 +32,7 @@ onMounted(() => {
     query()
 })
 
-const query = async () => {
+const query = async ({ isToBottom } = { isToBottom: true }) => {
     let url = '/messageData.json'
     if (isEdit.value) {
         url = '/api/message'
@@ -42,7 +42,9 @@ const query = async () => {
     })
     let resData = await res.json()
     data.value = resData.data
-    scrollToBottom()
+    if (isToBottom) {
+        scrollToBottom()
+    }
 }
 
 const deleteMessage = async (id) => {
@@ -50,7 +52,7 @@ const deleteMessage = async (id) => {
         method: 'DELETE'
     })
     await res.json()
-    query()
+    query({ isToBottom: false })
 }
 
 const scrollToBottom = () => {
