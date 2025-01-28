@@ -1,9 +1,11 @@
 <script setup>
 import { ref, computed, onMounted, nextTick } from 'vue'
 import MessageBoxInput from './MessageBoxInput.vue'
+import { throttle } from 'lodash'
 
 let data = ref([])
 const scroller = ref(null)
+const firstLoadTime = ref(Date.now())
 
 /*
     数据格式
@@ -53,6 +55,10 @@ const query = async ({ isToBottom } = { isToBottom: true }) => {
 }
 
 const deleteMessage = async (id) => {
+    let f = confirm('确定要删除吗？')
+    if (!f) {
+        return
+    }
     const res = await fetch(`/api/message/${id}`, {
         method: 'DELETE'
     })
@@ -67,6 +73,15 @@ const scrollToBottom = () => {
         }, 100)
     })
 }
+
+const onImageLoad = throttle(() => {
+    // 页面加载后 5 秒以内
+    if (Date.now() - firstLoadTime.value < 5000) {
+        nextTick(() => {
+            scroller.value.scrollToBottom()
+        })
+    }
+}, 200)
 
 </script>
 
@@ -87,7 +102,7 @@ const scrollToBottom = () => {
                 :item="item"
                 :active="active"
                 :size-dependencies="[
-                item.message,
+                    item.message,
                 ]"
                 :data-index="index"
                 :data-active="active"
@@ -98,10 +113,10 @@ const scrollToBottom = () => {
                     <div class="message-content">
                         <span class="message-naciname">程序员小石</span>
                         <div v-if="item.type === 'image'">
-                            <img width="50%" :src="item.message" alt="" >
+                            <img width="50%" :src="item.message" alt="" @load="onImageLoad" >
                         </div>
                         <pre v-if="item.type === 'text'" v-html="item.message"  ></pre>
-                        <a v-if="isEdit" @click="deleteMessage(item.id)">删除</a>
+                        <a v-if="isEdit" @click="deleteMessage(item.id)" style="cursor: pointer;" >删除</a>
                     </div>
                 </div>
             </DynamicScrollerItem>
