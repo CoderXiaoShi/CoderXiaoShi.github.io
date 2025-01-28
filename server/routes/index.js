@@ -32,10 +32,14 @@ router.get('/publish', async (ctx, next) => {
         let data = res.data
         fs.writeFileSync(path.resolve(__dirname, '../../docs/messageData.json'), JSON.stringify(data))
 
+        console.log(`1. 写入 messageData.json 成功`)
+
         // 2. 编译
         execSync('npm run docs:build', {
             cwd: path.join(process.cwd(), '../')
         })
+
+        console.log(`2. 编译成功`)
 
         // 3. 提交到 github
         execSync('git add .', {
@@ -47,6 +51,8 @@ router.get('/publish', async (ctx, next) => {
         execSync('git push', {
             cwd: path.join(process.cwd(), '../')
         })
+
+        console.log(`3. 提交到 github 成功`)
 
         ctx.body = {
             message: 'publish ok',
