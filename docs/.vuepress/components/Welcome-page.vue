@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, nextTick } from 'vue'
 import MessageBoxInput from './MessageBoxInput.vue'
-import { throttle } from 'lodash'
+import throttle from 'lodash/throttle'
 
 let data = ref([])
 const scroller = ref(null)
