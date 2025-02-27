@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <iframe class="message-box" src="http://121.4.104.149/#/open-chat" />
+    <iframe class="message-box" src="https://open-chat.xinglong.tech/#/open-chat" />
 </template>
 <style>
 .message-box {
