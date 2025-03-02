@@ -91,6 +91,7 @@ const query = async ({ isToBottom } = { isToBottom: true }) => {
 @media screen and (max-width: 768px) {
     .message-box{
         width: 100% !important;
+        height: 100vh;
     }
 }
 
