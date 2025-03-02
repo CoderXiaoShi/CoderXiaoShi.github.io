@@ -23,6 +23,7 @@
     "axios": "^1.7.9",
     "jsonwebtoken": "^9.0.2",
     "less": "^4.2.2",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "markdown": "^0.5.0"
   }
 }
