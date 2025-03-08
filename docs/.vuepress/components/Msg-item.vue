@@ -26,7 +26,7 @@ const handleCopy = () => {
 }
 </script>
 <template>
-    <div class="message-item">
+    <div class="message-item" v-if="msgData.role === 'user'">
         <div> <img class="message-avatar" src="/images/logo.jpg" alt=""> </div>
 
         <div class="message-content">
@@ -36,6 +36,9 @@ const handleCopy = () => {
                 <button class="copy-btn" @click="handleCopy">{{ isCopied ? '✓' : '复制' }}</button>
             </p>
         </div>
+    </div>
+    <div v-else-if="msgData.role === 'system'">
+        <p style="text-align: center;color: #ccc;">{{ msgData.message }}</p>
     </div>
 </template>
 <style scoped>
