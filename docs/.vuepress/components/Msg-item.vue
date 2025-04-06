@@ -38,7 +38,7 @@ const handleCopy = () => {
         </div>
     </div>
     <div v-else-if="msgData.role === 'system'">
-        <p style="text-align: center;color: #ccc;">{{ msgData.message }}</p>
+        <p style="text-align: center;color: #ccc; margin: 0;">{{ msgData.message }}</p>
     </div>
 </template>
 <style scoped>
