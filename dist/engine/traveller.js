@@ -1,0 +1,1 @@
+import{config as r}from"./config.js";import{readSiteInfo as t,siteText as e}from"./door-metadata.js";import{createTravelSession as n}from"./door-protocol.js";const i=t(location.href),a=n(r.skin,"",async()=>{var o;return e((o=await i)==null?void 0:o.name)}),f=()=>a.wornSkin();export{a as traveller,f as wornSkin};

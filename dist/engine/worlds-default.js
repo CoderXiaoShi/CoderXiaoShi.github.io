@@ -1,0 +1,1 @@
+const e=[{name:"Terry's Home",url:"https://terryhu.cn/",owner:"Terry",lang:["zh","en"],homecraft:!0,intro:"Welcome! It's all good!",logo:new URL("./assets/terry-logo.png",import.meta.url).href}];export{e as DEFAULT_WORLDS};

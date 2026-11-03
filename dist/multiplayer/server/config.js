@@ -1,0 +1,1 @@
+const e=process.env,r={port:Number(e.PORT)||8787,site:(e.SITE||"*").split(",").map(t=>t.trim()).filter(Boolean),maxPlayers:Math.min(200,Math.max(2,Number(e.MAX_PLAYERS)||50)),botsRect:(e.BOTS_RECT||"-4,4,4,-4").split(",").map(Number),maxFrame:32768,limits:{statePerSec:24,chatPer10s:4,joinPerMin:6}};export{r as config};

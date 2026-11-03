@@ -1,0 +1,31 @@
+import*as R from"three";const U=(document.documentElement.lang||navigator.language||"").toLowerCase().startsWith("zh"),x=(g,h)=>U?g:h,X=6,V=12e3,q=6e3,G=`
+#mp-chat { position: fixed; left: 20px; bottom: calc(max(20px, env(safe-area-inset-bottom)) + 232px); z-index: 12;
+  width: min(340px, 62vw); display: flex; flex-direction: column; gap: 5px; font: 500 13px/1.45 var(--text);
+  pointer-events: none; }
+#mp-chat[hidden] { display: none; }
+.mp-log { display: flex; flex-direction: column; gap: 2px; }
+.mp-line { width: fit-content; max-width: 100%; padding: 3px 8px; border-radius: 4px; overflow-wrap: anywhere;
+  background: rgba(12, 14, 13, .55); color: #f2f0ea; text-shadow: 1px 1px 0 rgba(0, 0, 0, .5); transition: opacity .8s; }
+.mp-line b { font-weight: 600; }
+.mp-line.sys { color: #cbc8c0; font-size: 12px; padding: 2px 8px; }
+.mp-line.fade { opacity: 0; }
+.mp-hint { pointer-events: auto; justify-self: start; padding: 3px 10px; border: 0; border-radius: 4px; cursor: pointer;
+  background: rgba(12, 14, 13, .55); color: #e8e6df; font: 500 12px/1.4 var(--text); }
+.mp-hint.down { opacity: .55; cursor: default; }
+.mp-field { pointer-events: auto; display: none; gap: 4px; }
+#mp-chat.typing .mp-field { display: flex; }
+#mp-chat.typing .mp-hint { display: none; }
+.mp-field input { flex: 1; min-width: 0; padding: 7px 9px; border: 0; border-radius: 4px;
+  background: var(--field); color: var(--ink); font: 500 13px/1.4 var(--text);
+  box-shadow: 0 0 0 2px var(--line), inset 1px 1px 0 rgba(0, 0, 0, .15); }
+.mp-field input:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+.mp-layer { position: fixed; inset: 0; z-index: 9; pointer-events: none; overflow: hidden; }
+.mp-tag, .mp-bubble { position: absolute; left: 0; top: 0; will-change: transform; }
+.mp-tag { padding: 2px 7px; border-radius: 4px; background: rgba(12, 14, 13, .6); color: #fff;
+  font: 600 12px/1.3 var(--text); text-shadow: 1px 1px 0 rgba(0, 0, 0, .6); }
+.mp-bubble { max-width: 230px; padding: 5px 9px; border-radius: 6px; background: var(--gui); color: var(--ink);
+  font: 500 13px/1.4 var(--text); box-shadow: 0 0 0 2px var(--line); overflow-wrap: anywhere; }
+.mp-bubble b { font-weight: 600; }
+.mp-bubble::after { content: ""; position: absolute; left: 50%; top: 100%; margin-left: -5px;
+  border: 5px solid transparent; border-top-color: var(--line); }
+`;function J({onSend:g,selfId:h}){const k=document.createElement("style");k.textContent=G,document.head.append(k);const a=document.createElement("div");a.id="mp-chat",a.hidden=!0;const v=document.createElement("div");v.className="mp-layer";const f=document.createElement("div");f.className="mp-log";const c=document.createElement("button");c.className="mp-hint",c.type="button";const y=document.createElement("form");y.className="mp-field";const l=document.createElement("input");l.maxLength=120,l.placeholder=x("说点什么…","Say something…"),l.autocomplete="off",y.append(l),a.append(f,c,y),document.body.append(a,v);const s=new Map;let w=0,p=!1;function A(e,t){const n=setTimeout(()=>e.classList.add("fade"),t);return setTimeout(()=>e.remove(),t+900),n}function L(e,t=V){for(f.append(e);f.children.length>X;)f.firstElementChild.remove();A(e,t)}const T=(e,t)=>{const n=document.createElement("b");return n.textContent=e,n.style.color=`hsl(${t}, 62%, 70%)`,n};function D(e,t){const n=s.get(e),i=document.createElement("div");i.className="mp-line",i.append(T((n==null?void 0:n.name)||e,(n==null?void 0:n.hue)||0),` ${t}`),L(i)}function E(e){const t=document.createElement("div");t.className="mp-line sys",t.textContent=e,L(t,6e3)}function N(){c.textContent=p?`${w} ${x("人在岛上 · 按 T 聊天",w===1?"person on the island · press T to chat":"people on the island · press T to chat")}`:x("重连中…","reconnecting…"),c.classList.toggle("down",!p)}function I(e){w=e,N()}function K(e){p=e==="up",a.hidden=e==="offline",a.hidden||(N(),p&&E(x("连上了小岛","on the island")))}const b=[];function C(){a.classList.add("typing"),l.focus()}function z(){a.classList.remove("typing"),l.value="",l.blur()}c.addEventListener("click",()=>{p&&C()}),y.addEventListener("submit",e=>{e.preventDefault();const t=l.value.trim().slice(0,120);if(z(),!t)return;const n=Date.now();for(;b.length&&n-b[0]>1e4;)b.shift();if(b.length>=4){E(x("说得太快了，歇口气","easy there — catch a breath"));return}b.push(n),g(t)}),l.addEventListener("keydown",e=>{e.key==="Escape"&&(e.stopPropagation(),z())}),addEventListener("keydown",e=>{a.hidden||document.activeElement===l||document.activeElement&&(document.activeElement.tagName==="INPUT"||document.activeElement.tagName==="TEXTAREA")||e.metaKey||e.ctrlKey||e.altKey||(e.key==="t"||e.key==="T"||e.key==="/")&&(e.preventDefault(),p&&C())},!0);function $(e,t,n){let i=s.get(e);if(!i){const r=document.createElement("div");r.className="mp-tag";const d=document.createElement("div");d.className="mp-bubble",d.style.visibility="hidden",v.append(r,d),i={tag:r,bubble:d,until:0,name:t,hue:n},s.set(e,i)}return i.name=t,i.hue=n,i.tag.textContent=t,i.tag.style.color=`hsl(${n}, 62%, 72%)`,i}function W(e){const t=s.get(e);t&&(t.tag.remove(),t.bubble.remove(),s.delete(e))}function j(){for(const[e,t]of s){if(e===h){t.tag.style.visibility="hidden",t.bubble.style.visibility="hidden";continue}t.tag.remove(),t.bubble.remove(),s.delete(e)}}function F(e,t){const n=s.get(e);n&&(n.bubble.replaceChildren(T(n.name,n.hue),` ${t}`),n.bubble.style.visibility="visible",n.until=performance.now()+q)}$(h,"",0);const u=new R.Vector3;function B(e,t,n,i,r,d,o,m){return u.set(t,n+d,i).applyMatrix4(r.matrixWorldInverse),u.z>-.3||(u.applyMatrix4(r.projectionMatrix),u.z>=1)?!1:(e.style.transform=`translate(${((u.x+1)/2*o).toFixed(1)}px, ${((1-(u.y+1)/2)*m).toFixed(1)}px) translate(-50%, -100%)`,!0)}function H(e,t,n){if(a.hidden)return;const i=innerWidth,r=innerHeight;for(const[d,o]of s){const m=n(d);if(!m){o.tag.style.visibility="hidden",o.bubble.style.visibility="hidden";continue}const M=m.x,_=m.y,S=m.z,P=o.until>e;B(o.tag,M,_,S,t,2.16,i,r)?o.tag.style.visibility="visible":o.tag.style.visibility="hidden",P&&B(o.bubble,M,_,S,t,o.tag.style.visibility==="visible"?2.62:2.2,i,r)?o.bubble.style.visibility="visible":o.bubble.style.visibility="hidden"}}return{line:D,system:E,presence:I,status:K,track:$,untrack:W,clear:j,sayBubble:F,update:H}}export{J as createChat};
