@@ -2,7 +2,6 @@
 lang: zh-CN
 title: VuePress 初体验
 description: 页面的描述
-date: yyyy-MM-dd
 
 ---
 

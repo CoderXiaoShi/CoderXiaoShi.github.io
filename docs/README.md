@@ -2,7 +2,6 @@
 lang: zh-CN
 title: 程序员小石
 description: 程序员小石, 抖音, 博客, 开源, 创业
-date: yyyy-MM-dd
 
 sidebar: false
 home: true

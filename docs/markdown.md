@@ -2,7 +2,6 @@
 lang: zh-CN
 title: Markdown 语法测试
 description: 页面的描述
-date: yyyy-MM-dd
 
 ---
 

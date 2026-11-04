@@ -1,7 +1,6 @@
 ---
 lang: zh-CN
 description: 页面的描述
-date: yyyy-MM-dd
 
 ---
 
