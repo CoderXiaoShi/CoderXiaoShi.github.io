@@ -1,1 +1,1 @@
-var e={name:"程序员小石",skin:"",languages:["zh","en"],weather:null,dock:["about","works","mailbox","phone"],mailbox:{endpoint:"",email:"",turnstileSitekey:""},multiplayer:{endpoint:"",maxRemote:24},badge:!0};export{e as default};
+var e={name:"程序员小石",skin:"",languages:["zh","en"],weather:null,dock:["about","works","mailbox","phone"],mailbox:{endpoint:"",email:"",turnstileSitekey:""},multiplayer:{endpoint:"wss://blog-ws.xinglong.tech/",maxRemote:24},badge:!0};export{e as default};
